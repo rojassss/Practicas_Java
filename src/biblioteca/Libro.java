@@ -28,7 +28,7 @@ public final class Libro {
         } else this.isbn = isbn;
 
         if (copiasDisponibles < 0) {
-            copiasDisponibles = 0;
+            this.copiasDisponibles = 0;
             System.out.println("Cantidad de copias disponibles invalidas, debe ser un valor superior o igual a 0");
         } else this.copiasDisponibles = copiasDisponibles;
 
@@ -83,6 +83,7 @@ public final class Libro {
     public boolean prestar() {
         if (copiasDisponibles > 0) {
             copiasDisponibles--;
+            prestamosHistoricos++;
             System.out.println("Prestamo registrado: " + titulo + ". Copias disponibles: " + copiasDisponibles);
             return true;
         }else{
